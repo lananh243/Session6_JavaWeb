@@ -15,5 +15,9 @@
 <%
     response.sendRedirect("products?action=findAll");
 %>
+
+<%
+    response.sendRedirect("employees?action=getAll");
+%>
 </body>
 </html>

@@ -50,10 +50,15 @@ public class ProductController extends HttpServlet {
                 boolean result = productService.addToCart(productCart);
 
                 if (result) {
+                    System.out.println("Thêm vào giỏ hàng thành công");
                     request.setAttribute("message", "Thêm vào giỏ hàng thành công");
+                    findAllProduct(request, response);
+
                 } else {
+                    System.out.println("Thêm vào giỏ hàng thất bại");
                     request.setAttribute("message", "Thêm vào giỏ hàng thất bại");
                 }
+
             } catch (NumberFormatException e) {
                 request.setAttribute("message", "Thông tin không hợp lệ. Vui lòng kiểm tra lại.");
             } catch (Exception e) {
@@ -62,6 +67,5 @@ public class ProductController extends HttpServlet {
             }
 
         }
-        findAllProduct(request, response);
     }
 }
